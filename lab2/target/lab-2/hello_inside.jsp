@@ -12,12 +12,7 @@
     <title>Nice to see you</title>
 </head>
 <body>
-<h3>
-    Hello inside
-</h3>
-
-<p>
-    You're good with captcha. Welcome on board!
-</p>
+<h3>Hello inside</h3>
+<p>You're good with captcha. Welcome on board!</p>
 </body>
 </html>
