@@ -14,9 +14,24 @@
     <h2>Count sum </h2>
     <h3>
         <%
-            int num1 = (int) request.getAttribute("num1");
-            int num2 = (int) request.getAttribute("num2");
-            out.println(num1 + " + " + num2 +  " =  ?");
+            try {
+                int num1 = (int) request.getAttribute("num1");
+                int num2 = (int) request.getAttribute("num2");
+                out.println(num1 + " + " + num2 + " =  ?");
+            }
+            catch (NullPointerException e) {
+                response.sendRedirect("http://localhost:8080/lab2_war_exploded/");
+            }
+            try {
+                String message = (String) request.getAttribute("message");
+                if (message != null) {
+                    out.println("\n");
+                    out.println("Your message is : " + message);
+                }
+            }
+            catch (NullPointerException e) {
+                out.println(" ");
+            }
         %>
     </h3>
     <form method="POST">

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.amsavchenko.maven.SingltoneSet" %><%--
   Created by IntelliJ IDEA.
   User: amsavchenko
   Date: 20/09/2019
@@ -7,6 +7,27 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
+<%
+    SingltoneSet setId = SingltoneSet.getInstance();
+    Cookie[] cookies = request.getCookies();
+    if (cookies == null) {
+        //request.getRequestDispatcher("/DemoServlet").forward(request, response);
+        response.sendRedirect("http://localhost:8080/lab2_war_exploded/");
+    }
+    else {
+        boolean enableToAccess = false;
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("sessionId")) {
+                if (setId.containsSessionId(cookie.getValue())) {
+                    enableToAccess = true;
+                }
+            }
+        }
+        if (!enableToAccess)
+            //request.getRequestDispatcher("/DemoServlet").forward(request, response);
+            response.sendRedirect("http://localhost:8080/lab2_war_exploded/");
+    }
+%>
 <head>
     <meta charset="UTF-8">
     <title>Nice to see you</title>

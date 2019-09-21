@@ -20,7 +20,7 @@ public class DemoFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws ServletException, IOException {
-        //chain.doFilter(request, response); //request forward to target of request
+
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         Cookie[] cookies = request.getCookies();
@@ -37,7 +37,6 @@ public class DemoFilter implements Filter {
 
         //else -
         chain.doFilter(request, response); //request forward to target of request
-        //response.sendRedirect("http://localhost:8080/lab2_war_exploded/DemoServlet");
 
 
     }
