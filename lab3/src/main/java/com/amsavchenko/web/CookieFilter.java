@@ -74,13 +74,8 @@ public class CookieFilter implements Filter {
         */
         //TOD возможно здесь должно быть еще одно условие защищающее от прямого захода на registered_users.jsp
         if (request.getRequestURI().equals("/lab3_war_exploded/registered_users.jsp"))
-            response.sendRedirect(request.getContextPath() + "/login");
-
-        if (request.getRequestURI().equals("/lab3_war_exploded/login.jsp"))
-            response.sendRedirect(request.getContextPath() + "/login");
-        if(request.getRequestURI().equals("/lab3_war_exploded/join.jsp"))
-            response.sendRedirect(request.getContextPath() + "/join");
-
+            response.sendRedirect(request.getContextPath() + "/");
+            //request.getRequestDispatcher("welcome.jsp").forward(request, response);
         chain.doFilter(req, resp);
     }
 

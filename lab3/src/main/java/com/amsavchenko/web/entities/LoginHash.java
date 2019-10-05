@@ -5,12 +5,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "hashlogin")
+@Table(name = "loginhash")
 public class LoginHash {
 
     @Id
-    private String hash;
     private String login;
+    private String hash;
 
     public LoginHash() {
     }
