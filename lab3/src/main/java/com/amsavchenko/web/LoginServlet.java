@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.UUID;
 
+import com.amsavchenko.web.dao.*;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
@@ -25,18 +27,22 @@ public class LoginServlet extends HttpServlet {
         String login = (String) request.getParameter("login");
         String password = (String) request.getParameter("password");
 
-        //TODO
+        //TOD
         // проверка наличия записи login-password в БД 1
+        DAOLoginPassword daoLPas = new DAOLoginPassword();
+        boolean isContain = daoLPas.isContainLoginPassword(login, password);
 
-        boolean loginPasswordContainsInDB = true;
-        if (loginPasswordContainsInDB) {
+        if (isContain) {
             String uuid = UUID.randomUUID().toString();
 
-            //TODO
+            //TOD
             // uuid заносится в БД 2 в формате login - uuid
-
-            Cookie cookie = new Cookie("sessionId", uuid);
-            response.addCookie(cookie);
+            DAOLoginHash daoLHash = new DAOLoginHash();
+            boolean isAdd = daoLHash.addLoginHash(login, uuid);
+            if (isAdd) {
+                Cookie cookie = new Cookie("sessionId", uuid);
+                response.addCookie(cookie);
+            }
             request.getRequestDispatcher("registered_users.jsp").forward(request, response);
 
         }

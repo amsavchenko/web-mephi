@@ -9,8 +9,8 @@
 <br/>
 <h2>List of registered users</h2>
 <br/>
-<p>здесь надо будет загрузить логины из БД 1</p>
-<p>плюс подумать о защите этой jsp от прямого входа</p>
+<p>Just hope it works correctly</p>
+<p></p>
 
 </body>
 </html>
