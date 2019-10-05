@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import com.amsavchenko.web.SessionFactoryUtil;
-import java.util.List;
 
 public class DAOLoginHash {
 
@@ -30,9 +29,9 @@ public class DAOLoginHash {
         catch (HibernateException e) {
             isOk = false;
         }
-        //finally {
-            //session.close();
-        //}
+        finally {
+            session.close();
+        }
         return isOk;
     }
 
@@ -42,9 +41,9 @@ public class DAOLoginHash {
         Transaction transaction = session.beginTransaction();
         LoginHash lh = new LoginHash(login, hash);
 
-        LoginHash lh2 = session.get(LoginHash.class, login);
+        LoginHash lh2 = session.get(LoginHash.class, hash);
         if (lh2 != null) {
-            if (lh2.getHash().equals(hash)) {
+            if (lh2.getLogin().equals(login)) {
                 isContain = true;
             }
         }
@@ -56,10 +55,9 @@ public class DAOLoginHash {
         boolean isContain = false;
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<LoginHash> lhs = (List<LoginHash>) session.createQuery("From LoginHash").list();
-        for (LoginHash lh : lhs) {
-            if (lh.getHash().equals(hash))
-                isContain = true;
+        LoginHash lh2 = session.get(LoginHash.class, hash);
+        if (lh2 != null) {
+            isContain = true;
         }
         return isContain;
     }
