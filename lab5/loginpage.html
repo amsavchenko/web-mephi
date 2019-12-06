@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        @import "css/mystyles.css"
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <img src="images/cat1.png" alt="Logo Cat" style="width: 200px;height: 170px;margin:0px;">
+        <p style="color: #f36f34;font-size: 60px;font-family: bold;margin:0px; height: 70px">kotochat</p>
+        <p style="font-size: 22px;font-family:Palatino, serif;font-weight:3; margin:0px">The place for a fluffy chill</p>
+    </div>
+    <div class="form-div">
+        <form th:object="${user}" th:action="@{/auth}" method="post">
+
+            <p class="label">Login</p>
+            <input type="text"th:field="*{email}" class="input"/>
+            
+            <p class="label">Password</p>
+            <input type="text" th:field="*{password}" class="input" />
+
+            <br/>
+            <button type="submit" class="button-submit">Sign in</button>
+        </form>
+    </div>
+    <div class="for-signup">
+        <a>Don't have an account yet?</a>
+        <a href="/register">Register now</a>
+    </div>
+    <div class="footer">
+        2019 Kotochat
+        <br/>
+        <a href="https://vk.com/amsavchenko">
+            <img src="images/vk-logo.png" alt="VK Logo" style="width: 40px;height:40px;margin-top: 5px;">
+    </div>
+    
+</div>
+
+</body>
+</html>
