@@ -1,4 +1,5 @@
 # Лабораторная работа №5
 
 Страница авторизации
-![] (images/screenshot1.png)
+
+![](images/screenshot1.png)
