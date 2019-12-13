@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
-	flex-direction: column;
-	background-color: white;
-	justify-content: center;
-	width: 100%;
-	align-self: center;
-	min-height: 100%;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  width: 100%;
+  align-self: center;
+  min-height: 100%;
 `;
 
 export const Label = styled.p`
@@ -21,14 +21,13 @@ export const Label = styled.p`
 `;
 
 export const Header = styled.div`
-  display: flex;
+    display: flex;
 	flex-direction: column;
 	align-self: center;
 	align-items: center;
 `; 
 
 export const ForSignup = styled.div`
-  flex: 0 0 auto;
 	margin-top: 20px;
 	font-family: sans-serif;
 	font-weight: 440; 
@@ -70,4 +69,31 @@ export const Input = styled.input`
   padding-left: 5px;
   font-size: 15px;
   margin-left:20px;
+`;
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+`;
+
+export const OrangeHeader = styled(Header)`
+    display: flex;
+    flex-direction: column;
+    background-color: #fc9d72;
+    color: black;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+`;
+
+export const Greeting = styled.p`
+    font-size: 22px; 
+    font-family: sans-serif;
+    font-weight: 7; 
+    margin: 0px;
+    padding: 15px;
 `;

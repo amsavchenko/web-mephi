@@ -9,7 +9,7 @@ import {
   ForSignup, 
   Footer, 
   ButtonSubmit, 
-  Input } from "./Auth-styles"
+  Input } from "./CustomStyles"
 
 
   export default function Login(props) {
@@ -20,7 +20,7 @@ import {
   
     function handleSubmit(event) {
       event.preventDefault();
-      alert('zachem nazhal? your name is ' + login + "pass " + password);
+      alert('your name is ' + login + "pass " + password);
     }
   
     return (
@@ -30,7 +30,7 @@ import {
             <p style={{color: "#f36f34", fontSize: "60px", fontFamily: "bold", margin:"0px", height: "70px" }}>kotochat</p>
             <p style={{fontSize: "22px", fontFamily: "Palatino, serif", fontWeight:"3", margin:"0px"}}>The place for a fluffy chill</p>
           </Header>
-        <form onSubmit={handleSubmit}>
+        <form className="SmallForm" onSubmit={handleSubmit}>
           <Label>Login</Label>
           <Input 
             type="login"
@@ -49,7 +49,7 @@ import {
         </form>
         <ForSignup>
             <a>Don't have an account yet? </a>
-            <a href="/register">Register now</a>
+            <a href="/register">Register</a> now
         </ForSignup>
         <Footer>
             © 2019 Kotochat
