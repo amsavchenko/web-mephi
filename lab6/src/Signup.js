@@ -13,7 +13,6 @@ import {
     Container,
     OrangeHeader,
     Greeting } from "./styles/CustomStyles"
-import { is } from "@babel/types";
 
 
 export default function Signup(props) {
@@ -23,6 +22,7 @@ export default function Signup(props) {
 
     useEffect( () => { document.title = "Join kotochat" }, [] );
     let reg = /[\u0400-\u04FF]/;
+
     function handleSubmit(event) {
         event.preventDefault();
         let isNameCorrect = true;
@@ -31,7 +31,7 @@ export default function Signup(props) {
         }
         let exception = "";
         exception += (!isNameCorrect ? 'Name must contain only cyrillic characters ' : '');
-        exception += (password.length < 6 ? 'Password must contain 6+ symbols' : '');
+        exception += (password.length < 6 ? '\nPassword must contain 6+ symbols' : '');
         if (exception.length != 0) {
             alert(exception);
         }
@@ -40,7 +40,7 @@ export default function Signup(props) {
     return (
         <Wrapper>
             <Header>
-                <img src={catNew}  alt={"Logo Cat"} style={{width: "300px", height: "200px", marginTop:"10px"}}/>
+                <img src={catNew}  alt={"Logo Cat"} style={{width: "300px", marginTop:"10px"}}/>
             </Header>
             <Container>
                 <Header>
@@ -83,7 +83,7 @@ export default function Signup(props) {
                 © 2019 Kotochat
                 <br/>
                 <a href="https://vk.com/amsavchenko">
-                <img src={vkLogo} alt="VK Logo" style={{width: "40px", height:"40px", marginTop: "5px"}}></img>
+                <img src={vkLogo} alt="VK Logo" style={{width: "40px", marginTop: "5px"}}></img>
                 </a>
             </Footer>
         </Wrapper>

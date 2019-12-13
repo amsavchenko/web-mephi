@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Login from './Auth';
 import Signup from './Signup';
+import Home from './Home'
 
 function App() {
   return (
@@ -39,11 +40,6 @@ function App() {
         </Switch>
     </Router>
   );
-}
-
-function Home() {
-  useEffect( () => { document.title = "home" }, [] );
-  return <h2>Heellloooo man</h2>;
 }
 
 export default App;

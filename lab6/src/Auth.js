@@ -20,13 +20,14 @@ import {
   
     function handleSubmit(event) {
       event.preventDefault();
-      alert('your name is ' + login + "pass " + password);
+      alert('You are trying to sign in with\n' +
+      'login: ' + login + '\npassword: ' + password);
     }
   
     return (
       <Wrapper>
           <Header>
-            <img src={cat1}  alt={"Logo Cat"} style={{width: "200px", height: "170px", margin:"0px"}}/>
+            <img src={cat1}  alt={"Logo Cat"} style={{height: "170px", margin:"0px"}}/>
             <p style={{color: "#f36f34", fontSize: "60px", fontFamily: "bold", margin:"0px", height: "70px" }}>kotochat</p>
             <p style={{fontSize: "22px", fontFamily: "Palatino, serif", fontWeight:"3", margin:"0px"}}>The place for a fluffy chill</p>
           </Header>
@@ -55,7 +56,7 @@ import {
             © 2019 Kotochat
             <br/>
             <a href="https://vk.com/amsavchenko">
-              <img src={vkLogo} alt="VK Logo" style={{width: "40px", height:"40px", marginTop: "5px"}}></img>
+              <img src={vkLogo} alt="VK Logo" style={{width: "40px", marginTop: "5px"}}></img>
             </a>
         </Footer>
       </Wrapper>
