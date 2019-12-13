@@ -7,9 +7,10 @@
 ├── lab3 ── веб-приложение с sign up/in (java servlet)
 ├── lab4 ── веб-приложение с sign up/in (spring)
 ├── lab5 ── страница авторизации
+├── lab6 ── страницы /auth, /register, /
 ```
 ## Технологии
-Maven | Servlet | Tomcat | Spring | Flex 
+Maven | Servlet | Tomcat | Spring | Flex | React | styled-components
 
 ##
 
