@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import './App.css';
+import './styles/App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 import Login from './Auth';
 import Signup from './Signup';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from "react-router-bootstrap";
 
 function App() {
   return (

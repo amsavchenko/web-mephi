@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Signup.css";
-import catNew from './cat2.png'
-import vkLogo from './vk-logo.png'
+import "./styles/Signup.css";
+import catNew from './images/cat2.png'
+import vkLogo from './images/vk-logo.png'
 import { 
     Wrapper, 
     Label, 
@@ -12,7 +12,8 @@ import {
     Input,
     Container,
     OrangeHeader,
-    Greeting } from "./CustomStyles"
+    Greeting } from "./styles/CustomStyles"
+import { is } from "@babel/types";
 
 
 export default function Signup(props) {
@@ -21,10 +22,19 @@ export default function Signup(props) {
     const [name, setName] = useState("");
 
     useEffect( () => { document.title = "Join kotochat" }, [] );
-
+    let reg = /[\u0400-\u04FF]/;
     function handleSubmit(event) {
         event.preventDefault();
-        alert('your name is ' + login + "pass " + password);
+        let isNameCorrect = true;
+        for (let char of name){
+            if (! reg.test(char)) { isNameCorrect = false; }
+        }
+        let exception = "";
+        exception += (!isNameCorrect ? 'Name must contain only cyrillic characters ' : '');
+        exception += (password.length < 6 ? 'Password must contain 6+ symbols' : '');
+        if (exception.length != 0) {
+            alert(exception);
+        }
     }
 
     return (

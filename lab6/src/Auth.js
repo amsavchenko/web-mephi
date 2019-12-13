@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Auth.css";
-import cat1 from './cat1.png'
-import vkLogo from './vk-logo.png'
+import "./styles/Auth.css";
+import cat1 from './images/cat1.png'
+import vkLogo from './images/vk-logo.png'
 import { 
   Wrapper, 
   Label, 
@@ -9,7 +9,7 @@ import {
   ForSignup, 
   Footer, 
   ButtonSubmit, 
-  Input } from "./CustomStyles"
+  Input } from "./styles/CustomStyles"
 
 
   export default function Login(props) {
