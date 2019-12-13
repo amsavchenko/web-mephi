@@ -14,15 +14,6 @@ import { LinkContainer } from "react-router-bootstrap";
 function App() {
   return (
     <Router>
-        {/*<Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/">Kotochat</Navbar.Brand>
-          
-            <Nav className="mr-auto">
-              <Nav.Link href="/auth">Login</Nav.Link>
-              <Nav.Link href="/register">Sign up</Nav.Link>
-            </Nav>
-          
-  </Navbar>*/}
         <nav>
           <div className="Navigation">
             <div>
@@ -37,8 +28,6 @@ function App() {
           </div>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/auth">
             <Login />
